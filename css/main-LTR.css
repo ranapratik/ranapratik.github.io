@@ -1640,7 +1640,7 @@ body.rounded-btns .read-more {
   left: -12px;
   width: 6px;
   aspect-ratio: 1/1;
-  background-color: var(--clr-main);
+  background-color: var(--clr-accent);
   scale: 0;
   border-radius: 50%;
   transition: all 0.2s ease-in-out;
