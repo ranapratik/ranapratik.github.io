@@ -1729,7 +1729,7 @@ body.rounded-btns .read-more {
 }
 @media (max-width: 1199px) {
   .header-basic {
-    background-color: var(--clr-main);
+    background-color: var(--clr-accent);
   }
   .header-basic .controls-box .header-search-btn {
     color: var(--clr-white);
@@ -1816,7 +1816,7 @@ body.rounded-btns .read-more {
     justify-content: unset;
     overflow: auto;
     overflow-x: hidden;
-    background-color: var(--clr-main);
+    background-color: var(--clr-accent);
   }
 }
 @media (max-width: 767px) {
