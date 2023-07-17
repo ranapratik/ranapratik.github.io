@@ -257,32 +257,33 @@
         </section>
       </div>
     </section>
+      <!-- Form data send to sheets script -->
+      <script>
+        let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
+        let form = document.querySelector('#contact-us-form');
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
 
-    <script>
-      let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
-      let form = document.querySelector('#contact-us-form');
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-  
-        let data = new FormData(form);
-        fetch(url, {
-          method: "POST",
-          body: data
-        })
-        .then((response) => response.text())
-        .then((result) => {
-          console.log(result);
-          // Handle the success response here
-          alert("Thank you for contacting us! Your message has been submitted.");
-          form.reset(); // Reset the form
-        })
-        .catch((error) => {
-          console.log(error);
-          // Handle the error here
-          alert("Oops! Something went wrong. Please try again later.");
+          let data = new FormData(form);
+          fetch(url, {
+            method: "POST",
+            body: data
+          })
+            .then((response) => response.text())
+            .then((result) => {
+              console.log(result);
+              // Handle the success response here
+              alert("Thank you for contacting us! Your message has been submitted.");
+              form.reset(); // Reset the form
+            })
+            .catch((error) => {
+              console.log(error);
+              // Handle the error here
+              alert("Oops! Something went wrong. Please try again later.");
+            });
         });
-      });
       </script>
+      <!-- end script-->
     <!-- End contact-us -->
     <!-- Start  page-footer Section-->
     <footer class="page-footer dark-color-footer" id="page-footer">
