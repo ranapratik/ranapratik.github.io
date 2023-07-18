@@ -110,7 +110,7 @@ Template Description: IT Solutions & Business Services Responsive HTML5 Bootstra
   border-radius: 1rem;
   top: 50%;
   translate: 0 -50%;
-  background-color: var(--clr-main);
+  background-color: var(--clr-accent);
 }
 .pre-title::before {
   left: 0;
