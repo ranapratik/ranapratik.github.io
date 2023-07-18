@@ -263,12 +263,15 @@
     <script>
       let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
       let form = document.querySelector('#contact-us-form');
+      let submitBtn = document.querySelector('#submit-btn');
       let messageContainer = document.querySelector('.message-container');
     
       form.addEventListener("submit", (e) => {
         e.preventDefault();
     
         if (validateFormInputs()) {
+          submitBtn.innerHTML = 'Sending...';
+    
           let data = new FormData(form);
           fetch(url, {
             method: "POST",
@@ -276,10 +279,12 @@
           })
           .then((response) => response.text())
           .then((result) => {
+            submitBtn.innerHTML = 'Send your message';
             displayMessage("success", "Thank you for contacting us! Your message has been sent.");
             form.reset(); // Reset the form
           })
           .catch((error) => {
+            submitBtn.innerHTML = 'Send your message';
             displayMessage("error", "Oops! Something went wrong. Please try again later.");
           });
         }
@@ -310,6 +315,7 @@
         }, 3000);
       }
     </script>
+    
     
       <!-- Place the script tag here -->
     <!-- <script>
