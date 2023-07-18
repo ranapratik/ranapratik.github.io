@@ -306,16 +306,7 @@
             input.nextElementSibling.textContent = '';
           }
 
-          requiredFields.forEach((field) => {
-            let input = field.querySelector('.text-input');
-            let error = field.querySelector('.error-msg');
-
-            if (input.value.trim() === '') {
-              error.textContent = 'This field is required';
-              isValid = false;
-            } else {
-              error.textContent = '';
-            }
+          
         });
     
         return isValid;
