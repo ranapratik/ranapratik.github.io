@@ -262,6 +262,7 @@
       let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
       let form = document.querySelector('#contact-us-form');
       form.addEventListener("submit", (e) => {
+        e.target.UserSubmit.innerHTML="Sending...."
         e.preventDefault();
   
         let data = new FormData(form);
@@ -271,6 +272,7 @@
         })
         .then((response) => response.text())
         .then((result) => {
+          e.target.UserSubmit.innerHTML="Send Your Message"
           console.log(result);
           // Handle the success response here
           alert("Thank you for contacting us! Your message has been submitted.");
