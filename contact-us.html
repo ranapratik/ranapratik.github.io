@@ -259,16 +259,18 @@
         </section>
       </div>
     </section>
-
     <script>
       let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
       let form = document.querySelector('#contact-us-form');
+      let submitBtn = document.querySelector('#submit-btn');
+      let messageContainer = document.querySelector('.message-container');
 
       form.addEventListener("submit", (e) => {
-        e.target.UserSubmit.innerHTML = "Sending...";
-
         e.preventDefault();
+
         if (validateFormInputs()) {
+          submitBtn.innerHTML = 'Sending...';
+
           let data = new FormData(form);
           fetch(url, {
             method: "POST",
@@ -276,80 +278,23 @@
           })
             .then((response) => response.text())
             .then((result) => {
-              console.log(result);
-              // Handle the success response here
-              e.target.UserSubmit.innerHTML = "Send Your Message";
-              alert("Thank you for contacting us! Your message has been sent.");
+              submitBtn.innerHTML = 'Send your message';
+              displayMessage("success", "Thank you for contacting us! Your message has been sent.");
               form.reset(); // Reset the form
             })
             .catch((error) => {
-              console.log(error);
-              // Handle the error here
-              e.target.UserSubmit.innerHTML = "Send Your Message";
-              alert("Oops! Something went wrong. Please try again later.");
+              submitBtn.innerHTML = 'Send your message';
+              displayMessage("error", "Oops! Something went wrong. Please try again later.");
             });
-        } else {
-          e.target.UserSubmit.innerHTML = "Send Your Message";
         }
       });
 
-      function validateFormInputs() {
-        let isValid = true;
-        let requiredFields = form.querySelectorAll('.input-wrapper.required');
-
-        requiredFields.forEach((field) => {
-          let input = field.querySelector('.text-input');
-          let error = field.querySelector('.error-msg');
-
-          if (input.value.trim() === '') {
-            error.textContent = 'This field is required';
-            isValid = false;
-          } else {
-            error.textContent = '';
-          }
-        });
-
-        return isValid;
-      }
-    </script>
-    
-
-    <!-- <script>
-      let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
-      let form = document.querySelector('#contact-us-form');
-      let submitBtn = document.querySelector('#submit-btn');
-      let messageContainer = document.querySelector('.message-container');
-    
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-    
-        if (validateFormInputs()) {
-          submitBtn.innerHTML = 'Sending...';
-    
-          let data = new FormData(form);
-          fetch(url, {
-            method: "POST",
-            body: data
-          })
-          .then((response) => response.text())
-          .then((result) => {
-            submitBtn.innerHTML = 'Send your message';
-            displayMessage("success", "Thank you for contacting us! Your message has been sent.");
-            form.reset(); // Reset the form
-          })
-          .catch((error) => {
-            submitBtn.innerHTML = 'Send your message';
-            displayMessage("error", "Oops! Something went wrong. Please try again later.");
-          });
-        }
-      });
-    
       function validateFormInputs() {
         let inputs = form.querySelectorAll('.required');
         let isValid = true;
         let requiredFields = form.querySelectorAll('.input-wrapper.required');
 
-    
+
         inputs.forEach((input) => {
           if (input.value.trim() === '') {
             isValid = false;
@@ -360,19 +305,19 @@
             input.nextElementSibling.textContent = '';
           }
 
-          
+
         });
-    
+
         return isValid;
       }
-    
+
       function displayMessage(type, text) {
         messageContainer.innerHTML = `<div class="message ${type}">${text}</div>`;
         setTimeout(() => {
           messageContainer.innerHTML = '';
         }, 3000);
       }
-    </script> -->
+    </script>
     
     
       <!-- Place the script tag here -->
