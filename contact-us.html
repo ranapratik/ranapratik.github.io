@@ -257,8 +257,60 @@
         </section>
       </div>
     </section>
-      <!-- Place the script tag here -->
+
     <script>
+      let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
+      let form = document.querySelector('#contact-us-form');
+      let messageContainer = document.querySelector('.message-container');
+    
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+    
+        if (validateFormInputs()) {
+          let data = new FormData(form);
+          fetch(url, {
+            method: "POST",
+            body: data
+          })
+          .then((response) => response.text())
+          .then((result) => {
+            displayMessage("success", "Thank you for contacting us! Your message has been sent.");
+            form.reset(); // Reset the form
+          })
+          .catch((error) => {
+            displayMessage("error", "Oops! Something went wrong. Please try again later.");
+          });
+        }
+      });
+    
+      function validateFormInputs() {
+        let inputs = form.querySelectorAll('.required');
+        let isValid = true;
+    
+        inputs.forEach((input) => {
+          if (input.value.trim() === '') {
+            isValid = false;
+            input.classList.add('error');
+            input.nextElementSibling.textContent = 'This field is required';
+          } else {
+            input.classList.remove('error');
+            input.nextElementSibling.textContent = '';
+          }
+        });
+    
+        return isValid;
+      }
+    
+      function displayMessage(type, text) {
+        messageContainer.innerHTML = `<div class="message ${type}">${text}</div>`;
+        setTimeout(() => {
+          messageContainer.innerHTML = '';
+        }, 3000);
+      }
+    </script>
+    
+      <!-- Place the script tag here -->
+    <!-- <script>
       let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
       let form = document.querySelector('#contact-us-form');
       form.addEventListener("submit", (e) => {
@@ -275,7 +327,7 @@
           e.target.UserSubmit.innerHTML="Send Your Message"
           console.log(result);
           // Handle the success response here
-          alert("Thank you for contacting us! Your message has been submitted.");
+          alert("Thank you for contacting us! Your message has been sent.");
           form.reset(); // Reset the form
         })
         .catch((error) => {
@@ -284,7 +336,7 @@
           alert("Oops! Something went wrong. Please try again later.");
         });
       });
-      </script>
+      </script> -->
         <!-- eND the script tag here -->
 
     <!-- End contact-us -->
