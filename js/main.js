@@ -351,25 +351,25 @@ $(function () {
     ValidateNotEmptyInput(msgText, "Please Enter Your Message");
     validateEmailInput(userEmail);
 
-  //   if (isValidInput && isValidEmail) {
-  //     $.ajax({
-  //       type: "POST",
-  //       url: contactForm.attr("action"),
-  //       data: contactForm.serialize(),
+    // if (isValidInput && isValidEmail) {
+    //   $.ajax({
+    //     type: "POST",
+    //     url: contactForm.attr("action"),
+    //     data: contactForm.serialize(),
 
-  //       success: function (data) {
-  //         $(".done-msg")
-  //           .text("Thank you, Your Message Was Received!")
-  //           .toggleClass("show");
-  //         setTimeout(function () {
-  //           $(".done-msg").text("").toggleClass("show");
-  //         }, 3000);
-  //         contactForm[0].reset();
-  //       },
-  //     });
-  //     return false;
-  //   }
-  // });
+    //     success: function (data) {
+    //       $(".done-msg")
+    //         .text("Thank you, Your Message Was Received!")
+    //         .toggleClass("show");
+    //       setTimeout(function () {
+    //         $(".done-msg").text("").toggleClass("show");
+    //       }, 3000);
+    //       contactForm[0].reset();
+    //     },
+    //   });
+    //   return false;
+    // }
+  });
 
   /*************End Contact Form Functionality************/
 
