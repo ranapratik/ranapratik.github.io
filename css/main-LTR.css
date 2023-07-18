@@ -82,7 +82,7 @@ Template Description: IT Solutions & Business Services Responsive HTML5 Bootstra
   position: relative;
   width: 5rem;
   height: 4px;
-  background: var(--clr-accent);
+  background: var(--clr-main);
   border-radius: 1rem;
 }
 
@@ -98,7 +98,7 @@ Template Description: IT Solutions & Business Services Responsive HTML5 Bootstra
   margin-bottom: 0;
   padding-left: 10px;
   padding-right: 10px;
-  color: var(--clr-accent);
+  color: var(--clr-main);
   z-index: 5;
 }
 .pre-title::before, .pre-title::after {
