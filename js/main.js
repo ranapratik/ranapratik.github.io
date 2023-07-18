@@ -304,72 +304,72 @@ $(function () {
 
   /*************Start Contact Form Functionality************/
 
-  const contactForm = $("#contact-us-form"),
-    userName = $("#user-name"),
-    userEmail = $("#user-email"),
-    msgSubject = $("#msg-subject"),
-    msgText = $("#msg-text"),
-    submitBtn = $("#submit-btn");
+  // const contactForm = $("#contact-us-form"),
+  //   userName = $("#user-name"),
+  //   userEmail = $("#user-email"),
+  //   msgSubject = $("#msg-subject"),
+  //   msgText = $("#msg-text"),
+  //   submitBtn = $("#submit-btn");
 
-  let isValidInput = false,
-    isValidEmail = false;
+  // let isValidInput = false,
+  //   isValidEmail = false;
 
-  function ValidateNotEmptyInput(input, errMsg) {
-    if (input.length) {
-      if (input.val().trim() === "") {
-        $(input).siblings(".error-msg").text(errMsg).css("display", "block");
-        isValidInput = false;
-      } else {
-        $(input).siblings(".error-msg").text("").css("display", "none");
-        isValidInput = true;
-      }
-    }
-  }
+  // function ValidateNotEmptyInput(input, errMsg) {
+  //   if (input.length) {
+  //     if (input.val().trim() === "") {
+  //       $(input).siblings(".error-msg").text(errMsg).css("display", "block");
+  //       isValidInput = false;
+  //     } else {
+  //       $(input).siblings(".error-msg").text("").css("display", "none");
+  //       isValidInput = true;
+  //     }
+  //   }
+  // }
 
-  function validateEmailInput(emailInput) {
-    let pattern =
-      /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  // function validateEmailInput(emailInput) {
+  //   let pattern =
+  //     /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
-    if (pattern.test(emailInput.val()) === false) {
-      $(emailInput)
-        .siblings(".error-msg")
-        .text("Please Enter a valid Email")
-        .css("display", "block");
-      isValidEmail = false;
-    } else {
-      $(emailInput).siblings(".error-msg").text("").css("display", "none");
-      isValidEmail = true;
-    }
-  }
+  //   if (pattern.test(emailInput.val()) === false) {
+  //     $(emailInput)
+  //       .siblings(".error-msg")
+  //       .text("Please Enter a valid Email")
+  //       .css("display", "block");
+  //     isValidEmail = false;
+  //   } else {
+  //     $(emailInput).siblings(".error-msg").text("").css("display", "none");
+  //     isValidEmail = true;
+  //   }
+  // }
 
-  submitBtn.on("click", function (e) {
-    e.preventDefault();
+  // submitBtn.on("click", function (e) {
+  //   e.preventDefault();
 
-    ValidateNotEmptyInput(userName, "Please Enter Your Name");
-    ValidateNotEmptyInput(userEmail, "Please Enter Your Email");
-    ValidateNotEmptyInput(msgSubject, "Please Enter Your subject");
-    ValidateNotEmptyInput(msgText, "Please Enter Your Message");
-    validateEmailInput(userEmail);
+  //   ValidateNotEmptyInput(userName, "Please Enter Your Name");
+  //   ValidateNotEmptyInput(userEmail, "Please Enter Your Email");
+  //   ValidateNotEmptyInput(msgSubject, "Please Enter Your subject");
+  //   ValidateNotEmptyInput(msgText, "Please Enter Your Message");
+  //   validateEmailInput(userEmail);
 
-    // if (isValidInput && isValidEmail) {
-    //   $.ajax({
-    //     type: "POST",
-    //     url: contactForm.attr("action"),
-    //     data: contactForm.serialize(),
+  //   // if (isValidInput && isValidEmail) {
+  //   //   $.ajax({
+  //   //     type: "POST",
+  //   //     url: contactForm.attr("action"),
+  //   //     data: contactForm.serialize(),
 
-    //     success: function (data) {
-    //       $(".done-msg")
-    //         .text("Thank you, Your Message Was Received!")
-    //         .toggleClass("show");
-    //       setTimeout(function () {
-    //         $(".done-msg").text("").toggleClass("show");
-    //       }, 3000);
-    //       contactForm[0].reset();
-    //     },
-    //   });
-    //   return false;
-    // }
-  });
+  //   //     success: function (data) {
+  //   //       $(".done-msg")
+  //   //         .text("Thank you, Your Message Was Received!")
+  //   //         .toggleClass("show");
+  //   //       setTimeout(function () {
+  //   //         $(".done-msg").text("").toggleClass("show");
+  //   //       }, 3000);
+  //   //       contactForm[0].reset();
+  //   //     },
+  //   //   });
+  //   //   return false;
+  //   // }
+  // });
 
   /*************End Contact Form Functionality************/
 
