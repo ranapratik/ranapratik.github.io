@@ -318,65 +318,6 @@
         }, 3000);
       }
     </script>
-    
-
-    <!-- <script>
-      let url = 'https://script.google.com/macros/s/AKfycbw3j3DRfCMwKqQGFamxSi12jtBgPMX-Ywd3SKzsYQr64MLjYg4-CYJfZ_-l6Unvfdx8Gg/exec';
-      let form = document.querySelector('#contact-us-form');
-      let submitBtn = document.querySelector('#submit-btn');
-      let messageContainer = document.querySelector('.message-container');
-
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-
-        if (validateFormInputs()) {
-          submitBtn.innerHTML = 'Sending...';
-
-          let data = new FormData(form);
-          fetch(url, {
-            method: "POST",
-            body: data
-          })
-            .then((response) => response.text())
-            .then((result) => {
-              submitBtn.innerHTML = 'Send your message';
-              displayMessage("success", "Thank you for contacting us! Your message has been sent.");
-              form.reset(); // Reset the form
-            })
-            .catch((error) => {
-              submitBtn.innerHTML = 'Send your message';
-              displayMessage("error", "Oops! Something went wrong. Please try again later.");
-            });
-        }
-      });
-
-      function validateFormInputs() {
-        let inputs = form.querySelectorAll('.required');
-        let isValid = true;
-
-        inputs.forEach((input) => {
-          if (input.value.trim() === '') {
-            isValid = false;
-            input.classList.add('error');
-            let errorContainer = input.closest('.input-wrapper').querySelector('.error-msg');
-            errorContainer.textContent = 'This field is required';
-          } else {
-            input.classList.remove('error');
-            let errorContainer = input.closest('.input-wrapper').querySelector('.error-msg');
-            errorContainer.textContent = '';
-          }
-        });
-
-        return isValid;
-      }
-
-      function displayMessage(type, text) {
-        messageContainer.innerHTML = `<div class="message ${type}">${text}</div>`;
-        setTimeout(() => {
-          messageContainer.innerHTML = '';
-        }, 3000);
-      }
-    </script> -->
 
     <!-- End contact-us -->
 
@@ -391,21 +332,6 @@
               <p class="footer-text-about-us ">
                 Empowering Your Online Success. We provide expert web development, design, digital marketing, and SEO services. Partner with us to unlock your digital potential and achieve remarkable online growth.              </p>
             </div>
-            
-            <!-- <div class="form-area ">
-              <div class="mailchimp-form ">
-                <form class="one-field-form" method="post" action="index.html#0">
-                  <div class="field-group ">
-                    <label class="email-label" for="email-input"> Subscribe to our news letter</label>
-                    <input class="email-input " type="email" value="" name="EMAIL" id="email-input" placeholder="Email Address" autocomplete="off"/>
-                    <div class="cta-area">
-                      <input class="btn-solid subscribe-btn" type="submit" value="Subscribe" name="subscribe"/>
-                    </div>
-                  </div><span class="email-notice">*we will not share your personal info</span>
-                </form>
-              </div>
-            </div> -->
-
           </div>
           <div class="col-6 col-lg-2  footer-col ">
             <h2 class=" footer-col-title    ">useful links</h2>
