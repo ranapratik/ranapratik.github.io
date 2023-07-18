@@ -1668,7 +1668,7 @@ body.rounded-btns .read-more {
   border-bottom: 1px solid transparent;
 }
 .is-sticky.header-basic {
-  background-color: var(--clr-main);
+  background-color: var(--clr-accent);
 }
 .is-sticky.header-basic .menu-link {
   color: var(--clr-white) !important;
